@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useQuery, useLazyQuery } from '@apollo/client'
 import { SIGN_IN_QUERY } from '../apollo/querys/login'
-import { useRouter } from 'next/router'
+import { Router } from 'next/router'
 
 const login = () => {
     const router = useRouter()
@@ -40,7 +40,7 @@ const login = () => {
                 localStorage.setItem('token', token )
                 setTimeout(() => {
                     
-                    router.push('/')
+                    Router.push('/')
                     setMensaje( null )
                 }, 1800);
             } catch (error) {
